@@ -40,15 +40,29 @@ function Carousel() {
   leftButton.textContent = " < ";
   rightButton.textContent = " > ";
 
-  leftButton.addEventListener('click', () => {
-    mountainImage.classList.toggle("active-image");
-    computerImage.classList.toggle("active-image");
-  });
+  function imgSlider() {
+    let index = -1;
+    let imgArr = [mountainImage, computerImage, treeImage, turntableImage];
+    return function() {
+      if (index < 3){
+        index = index + 1;
+        imgArr[index-1].classList.remove("active-image");
+        imgArr[index].classList.add("active-image");
+        console.log(index);
+        return imgArr[index];
+      } else {
+        let index = 0;
+        imgArr[index].classList.add("active-image");
+        imgArr[3].classList.remove("active-image");
+        console.log(index);
+        return imgArr[index];
+      }
+    }
+  };
 
-  rightButton.addEventListener('click', () => {
-    mountainImage.classList.toggle("active-image");
-    computerImage.classList.toggle("active-image");
-  });
+  leftButton.addEventListener('click', imgSlider());
+
+  rightButton.addEventListener('click', imgSlider());
 
   carousel.append(leftButton);
   carousel.append(mountainImage);
