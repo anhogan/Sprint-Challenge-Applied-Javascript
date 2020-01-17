@@ -40,6 +40,16 @@ function Carousel() {
   leftButton.textContent = " < ";
   rightButton.textContent = " > ";
 
+  leftButton.addEventListener('click', () => {
+    mountainImage.classList.toggle("active-image");
+    computerImage.classList.toggle("active-image");
+  });
+
+  rightButton.addEventListener('click', () => {
+    mountainImage.classList.toggle("active-image");
+    computerImage.classList.toggle("active-image");
+  });
+
   carousel.append(leftButton);
   carousel.append(mountainImage);
   carousel.append(computerImage);
