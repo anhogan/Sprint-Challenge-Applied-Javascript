@@ -41,7 +41,7 @@ function Carousel() {
   rightButton.textContent = " > ";
 
   function imgSlider() {
-    let index = -1;
+    let index = 0;
     let imgArr = [mountainImage, computerImage, treeImage, turntableImage];
     return function() {
       if (index < 3){
