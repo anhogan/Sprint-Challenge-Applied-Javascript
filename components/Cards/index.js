@@ -20,9 +20,7 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
   .then(response => {
-    console.log(response);
     let topics = Object.values(response.data.articles)
-    console.log(topics);
 
     topics.forEach(headline => {
       headline.forEach(card => {
