@@ -51,7 +51,7 @@ function Carousel() {
         console.log(index);
         return imgArr[index];
       } else {
-        let index = 0;
+        index = 0;
         imgArr[index].classList.add("active-image");
         imgArr[3].classList.remove("active-image");
         console.log(index);
