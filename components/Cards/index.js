@@ -26,18 +26,15 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
     let headlines = topics.map(topic => topic[1]);
     console.log(headlines);
+    console.log(headlines[0]);
 
     headlines.forEach(headline => {
-      let newArticle = cardCreator(headline);
-      let parentElement = document.querySelector('.cards-container');
-      parentElement.append(newArticle)
-    })
-
-    // response.data.articles.javascript.forEach(topic => {
-    //   let newArticle = cardCreator(topic);
-    //   let parentElement = document.querySelector('.cards-container');
-    //   parentElement.append(newArticle);
-    // })
+      headline.forEach(card => {
+        let newArticle = cardCreator(card);
+        let parentElement = document.querySelector('.cards-container');
+        parentElement.append(newArticle)
+      });
+    });
   })
   .catch(err => {
     console.log(err);
