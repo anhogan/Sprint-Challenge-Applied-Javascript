@@ -21,14 +21,10 @@
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
   .then(response => {
     console.log(response);
-    let topics = Object.entries(response.data.articles)
+    let topics = Object.values(response.data.articles)
     console.log(topics);
 
-    let headlines = topics.map(topic => topic[1]);
-    console.log(headlines);
-    console.log(headlines[0]);
-
-    headlines.forEach(headline => {
+    topics.forEach(headline => {
       headline.forEach(card => {
         let newArticle = cardCreator(card);
         let parentElement = document.querySelector('.cards-container');
