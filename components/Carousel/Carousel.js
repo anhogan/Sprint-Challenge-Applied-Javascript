@@ -30,11 +30,15 @@ function Carousel() {
   carousel.classList.add("carousel");
   leftButton.classList.add("left-button");
   rightButton.classList.add("right-button");
+  mountainImage.classList.add("active-image");
 
   mountainImage.src = "../assets/carousel/mountains.jpeg";
   computerImage.src = "../assets/carousel/computer.jpeg";
   treeImage.src = "../assets/carousel/trees.jpeg";
   turntableImage.src = "../assets/carousel/turntable.jpeg";
+
+  leftButton.textContent = " < ";
+  rightButton.textContent = " > ";
 
   carousel.append(leftButton);
   carousel.append(mountainImage);
@@ -46,5 +50,5 @@ function Carousel() {
   return carousel;
 };
 
-const parentElement = document.querySelector('.carousel-container');
-parentElement.append(Carousel());
+const carouselParent = document.querySelector('.carousel-container');
+carouselParent.append(Carousel());
